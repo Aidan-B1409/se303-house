@@ -11,7 +11,8 @@ class House
       3 => 'the rat that ate ',
       4 => 'the cat that killed ',
       5 => 'the dog that worried ', 
-      6 => 'the cow with the crumpled horn that tossed '
+      6 => 'the cow with the crumpled horn that tossed ', 
+      7 => 'the maiden all forlorn that milked '
     }
     str = ''
     num.downto(1).each do |n|
