@@ -9,8 +9,9 @@ class House
       1 => "the house that Jack built.\n",
       2 => 'the malt that lay in ',
       3 => 'the rat that ate ',
-      4 => 'the cat that killed ', 
-      5 => 'the dog that worried '
+      4 => 'the cat that killed ',
+      5 => 'the dog that worried ', 
+      6 => 'the cow with the crumpled horn that tossed '
     }
     str = ''
     num.downto(1).each do |n|
