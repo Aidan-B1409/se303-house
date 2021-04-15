@@ -1,9 +1,10 @@
 class House
 
   def initialize
+
   end
 
-
+# This code has teenage insecurity issues
   def line(num)
     lines = {
       1 => "the house that Jack built.\n",
@@ -27,6 +28,6 @@ class House
   end
 
   def recite()
-    return line(12)
+    (1..12).collect { |x| line(x) }.join("\n")
   end
 end
