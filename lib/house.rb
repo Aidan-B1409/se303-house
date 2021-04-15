@@ -6,7 +6,7 @@ class House
 
 # This code has teenage insecurity issues
   def line(num)
-    lines = {
+    phrases = {
       1 => "the house that Jack built.\n",
       2 => 'the malt that lay in',
       3 => 'the rat that ate',
@@ -20,7 +20,7 @@ class House
       11 => 'the farmer sowing his corn that kept',
       12 => 'the horse and the hound and the horn that belonged to'
     }
-    'This is ' << num.downto(1).collect { |x| lines[x] }.join(' ')
+    'This is ' << num.downto(1).collect { |x| phrases[x] }.join(' ')
   end
 
   def recite()
