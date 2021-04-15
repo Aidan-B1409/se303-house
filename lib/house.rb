@@ -14,7 +14,6 @@ class House
     num.downto(1).each do |n|
       str << lines[n]
     end
-    puts str
     'This is ' << str
   end
 end
