@@ -8,7 +8,7 @@ class House
   end
 
   def line(num)
-    verse = Verse.get_verse(@house_type)
+    verse = @verse
     verse.preface << num.downto(1).collect { |x| verse.get_phrase(x) }.join(' ')
   end
 
