@@ -42,7 +42,7 @@ class Verse
     }
   end
   def getphrase(num)
-    
+    @phrases[num]
   end
 
 end
