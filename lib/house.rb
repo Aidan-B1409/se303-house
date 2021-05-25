@@ -8,8 +8,7 @@ class House
   end
 
   def line(num)
-    verse = @verse
-    verse.preface << num.downto(1).collect { |x| verse.get_phrase(x) }.join(' ')
+    @verse.preface << num.downto(1).collect { |x| @verse.get_phrase(x) }.join(' ')
   end
 
   def recite
