@@ -43,12 +43,7 @@ class Verse
   end
 
   def preface(house_type)
-    case house_type
-    when :pirate
-      'Thar be '
-    else
-      'This is '
-    end
+    'This is '
   end
 
   def get_phrase(num)
