@@ -21,7 +21,7 @@ class House
       'the farmer sowing his corn that kept',
       'the horse and the hound and the horn that belonged to'
     ]
-    prefix << (num-1).downto(0).collect { |x| ' ' << phrases[x]}.join(' ').squeeze(' ')
+    prefix << (num - 1).downto(0).collect { |x| ' ' << phrases[x]}.join(' ').squeeze(' ')
   end
 
   def recite
