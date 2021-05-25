@@ -11,7 +11,6 @@ class House
 end
 
 class Verse
-  attr_reader :preface
 
   def initialize
     @phrases = {
@@ -29,6 +28,10 @@ class Verse
       12 => 'the horse and the hound and the horn that belonged to'
     }
     @preface = 'This is '
+  end
+
+  def preface
+    'This is '
   end
 
   def get_phrase(num)
