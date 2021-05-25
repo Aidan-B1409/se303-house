@@ -4,6 +4,7 @@ class House
 
   def initialize(house_type = :house)
     @house_type = house_type
+    @verse = Verse.get_verse(house_type)
   end
 
   def line(num)
