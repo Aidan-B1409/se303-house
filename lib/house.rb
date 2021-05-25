@@ -1,6 +1,7 @@
 class House
 
   def line(num)
+    verse = Verse.new()
     phrases = {
       1 => "the house that Jack built.\n",
       2 => 'the malt that lay in',
