@@ -24,6 +24,10 @@ class Verse
     registry.prepend(verse)
   end
 
+  def self.inherited(verse)
+    register(verse)
+  end
+
   def self.get_verse(house_type)
     case house_type
     when :pirate
