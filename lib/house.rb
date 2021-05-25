@@ -28,17 +28,12 @@ class Verse
     register(verse)
   end
 
-  def self.respond_to?
+  def self.respond_to?(house_type)
     true
   end
 
   def self.get_verse(house_type)
-    case house_type
-    when :pirate
-      PirateVerse.new
-    else
-      Verse.new
-    end
+    registry.find{ |verse| verse.respond_to?(house_type)}.new
   end
 
   def initialize
