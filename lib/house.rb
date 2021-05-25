@@ -5,6 +5,10 @@ class House
 
   end
 
+  def phrase(num)
+    
+  end
+
   def line(num)
     preface = 'This is'
     suffix = "the house that Jack built.\n"
@@ -23,7 +27,7 @@ class House
       'the farmer sowing his corn that kept',
       'the horse and the hound and the horn that belonged to'
     ]
-    line = (num-1).downto(0).collect { |x| phrases[x] }.join(' ')
+    line = (num - 1).downto(0).collect { |x| phrases[x] }.join(' ')
     "#{preface} #{line} #{suffix}".squeeze(' ')
   end
 
