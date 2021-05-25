@@ -20,6 +20,10 @@ class Verse
     @registry ||= [Verse]
   end
 
+  def self.register(verse)
+    registry.prepend(verse)
+  end
+
   def self.get_verse(house_type)
     case house_type
     when :pirate
