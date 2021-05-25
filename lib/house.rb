@@ -29,8 +29,13 @@ class Verse
     }
   end
 
-  def preface
-    'This is '
+  def preface(house_type = 'house')
+    case house_type
+    when 'pirate'
+      'Thar be '
+    else
+      'This is '
+    end
   end
 
   def get_phrase(num)
