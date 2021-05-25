@@ -13,4 +13,8 @@ class House
   def recite
     (1..12).collect { |x| line(x) }.join("\n")
   end
+
+  def recite_random
+    
+  end
 end
