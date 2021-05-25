@@ -25,9 +25,7 @@ class House
   end
 
   def line(num)
-
-    line = phrase(num)
-    "#{line}".squeeze(' ')
+    phrase(num)
   end
 
   def recite
