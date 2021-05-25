@@ -128,11 +128,17 @@ Thar be the horse and the hound and the horn that belonged to the farmer sowing 
     assert_equal expected, House.new(:pirate).recite
   end
 
-  def test_random_full_song
-    seed = 1049
-    House.new.recite_random(seed)
-    print(House.new.recite_random(seed))
+  def test_random_seed_determinatcy
+    seed = 1409
+    assert_equal House.new.recite_random(seed), House.new.recite_random(seed)
   end
+
+  def test_random_full_song
+    seed = 1409
+    
+  end
+
+
 
   def test_random_pirate_song
 
