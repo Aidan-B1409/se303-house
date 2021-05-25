@@ -33,7 +33,8 @@ class House
     else
       ''
     end
-    preface << line << suffix
+    # preface << line << suffix
+    "#{preface}#{line}#{suffix}"
   end
 
   def recite
