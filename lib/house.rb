@@ -32,7 +32,7 @@ class House
     else
       "This is the house that Jack built.\n"
     end
-    
+    preface << line[12...]
   end
 
   def recite
