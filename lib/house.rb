@@ -6,7 +6,7 @@ class House
 
   def line(num)
     verse = Verse.get_verse(@house_type)
-    verse.preface(@house_type) << num.downto(1).collect { |x| verse.get_phrase(x) }.join(' ')
+    verse.preface << num.downto(1).collect { |x| verse.get_phrase(x) }.join(' ')
   end
 
   def recite
@@ -42,7 +42,7 @@ class Verse
     }
   end
 
-  def preface(house_type)
+  def preface
     'This is '
   end
 
@@ -54,7 +54,7 @@ end
 
 class PirateVerse < Verse
 
-  def preface(house_type)
+  def preface
     'Thar be '
   end
 end
