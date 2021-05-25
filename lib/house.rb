@@ -10,12 +10,12 @@ class House
     @verse.preface << num.downto(1).collect { |x| @verse.get_phrase(x) }.join(' ')
   end
 
-  def recite(linenum = (1..12))
+  def recite(linenum = Array((1..12)))
     linenum.collect { |x| line(x) }.join("\n")
   end
 
-  def recite_random(seed: Random.new_seed)
+  def recite_random(seed = Random.new_seed)
     rng = Random.new(seed)
-    recite((1..12).shuffle(rng))
+    recite(Array((1..12)).shuffle(random: rng))
   end
 end
