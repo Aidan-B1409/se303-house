@@ -11,6 +11,8 @@ class House
 end
 
 class Verse
+  attr_reader :preface
+
   def initialize
     @phrases = {
       1 => "the house that Jack built.\n",
