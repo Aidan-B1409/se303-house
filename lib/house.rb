@@ -1,7 +1,7 @@
 class House
 
   def line(num)
-    verse = Verse.new()
+    verse = Verse.new
     phrases = {
       1 => "the house that Jack built.\n",
       2 => 'the malt that lay in',
@@ -16,7 +16,7 @@ class House
       11 => 'the farmer sowing his corn that kept',
       12 => 'the horse and the hound and the horn that belonged to'
     }
-    'This is ' << num.downto(1).collect { |x| phrases[x] }.join(' ')
+    'This is ' << num.downto(1).collect { |x| verse.get_phrase(x) }.join(' ')
   end
 
   def recite
@@ -42,7 +42,8 @@ class Verse
       12 => 'the horse and the hound and the horn that belonged to'
     }
   end
-  def getphrase(num)
+
+  def get_phrase(num)
     @phrases[num]
   end
 
