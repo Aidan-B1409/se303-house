@@ -34,7 +34,7 @@ class House
   end
 
   def recite
-    12.downto(1).collect { |x| line(x) }.join('')
+    1.upto(12).collect { |x| line(x) }.join("\n")
   end
 
 end
