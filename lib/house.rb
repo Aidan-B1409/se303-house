@@ -1,8 +1,12 @@
 class House
 
+  def initialize(house_type = 'house')
+    @house_type = house_type
+  end
+
   def line(num)
     verse = Verse.new
-    verse.preface << num.downto(1).collect { |x| verse.get_phrase(x) }.join(' ')
+    verse.preface(@house_type) << num.downto(1).collect { |x| verse.get_phrase(x) }.join(' ')
   end
 
   def recite
