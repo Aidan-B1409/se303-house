@@ -28,8 +28,8 @@ class Verse
   def initialize
 
   end
-  def getline(num)
+  def getphrase(num)
 
   end
-  
+
 end
