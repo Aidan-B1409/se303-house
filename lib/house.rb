@@ -28,6 +28,10 @@ class Verse
     register(verse)
   end
 
+  def self.respond_to?
+    true
+  end
+
   def self.get_verse(house_type)
     case house_type
     when :pirate
@@ -43,9 +47,9 @@ class Verse
       2 => 'the malt that lay in',
       3 => 'the rat that ate',
       4 => 'the cat that killed',
-      5 => 'the dog that worried', 
+      5 => 'the dog that worried',
       6 => 'the cow with the crumpled horn that tossed',
-      7 => 'the maiden all forlorn that milked', 
+      7 => 'the maiden all forlorn that milked',
       8 => 'the man all tattered and torn that kissed',
       9 => 'the priest all shaven and shorn that married',
       10 => 'the rooster that crowed in the morn that woke',
@@ -66,6 +70,9 @@ end
 
 class PirateVerse < Verse
 
+  def self.respond_to?(house_type)
+    house_type == :pirate
+  end
   def preface
     'Thar be '
   end
