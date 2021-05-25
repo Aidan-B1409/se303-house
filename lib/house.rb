@@ -1,6 +1,6 @@
 class House
 
-  def initialize(house_type = 'house')
+  def initialize(house_type = :house)
     @house_type = house_type
   end
 
@@ -33,9 +33,9 @@ class Verse
     }
   end
 
-  def preface(house_type = 'house')
+  def preface(house_type)
     case house_type
-    when 'pirate'
+    when :pirate
       'Thar be '
     else
       'This is '
@@ -46,4 +46,11 @@ class Verse
     @phrases[num]
   end
 
+end
+
+class PirateVerse < Verse
+
+  def preface(house_type)
+    'Thar be '
+  end
 end
