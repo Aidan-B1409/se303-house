@@ -5,7 +5,7 @@ class House
 
   end
 
-  def phrase(num)
+  def line(num)
     prefix = 'This is'
     phrases = [
       "the house that Jack built.\n",
@@ -22,10 +22,6 @@ class House
       'the horse and the hound and the horn that belonged to'
     ]
     prefix << (num-1).downto(0).collect { |x| ' ' << phrases[x]}.join(' ').squeeze(' ')
-  end
-
-  def line(num)
-    phrase(num)
   end
 
   def recite
