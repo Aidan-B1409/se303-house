@@ -16,6 +16,10 @@ end
 
 class Verse
 
+  def self.registry
+    @registry ||= [Verse]
+  end
+
   def self.get_verse(house_type)
     case house_type
     when :pirate
