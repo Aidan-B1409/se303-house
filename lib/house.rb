@@ -8,7 +8,6 @@ class House
   def recite
     (1..12).collect { |x| line(x) }.join("\n")
   end
-
 end
 
 class Verse
@@ -27,6 +26,7 @@ class Verse
       11 => 'the farmer sowing his corn that kept',
       12 => 'the horse and the hound and the horn that belonged to'
     }
+    @preface = 'This is '
   end
 
   def get_phrase(num)
