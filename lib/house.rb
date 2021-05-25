@@ -5,7 +5,7 @@ class House
   end
 
   def line(num)
-    verse = Verse.new
+    verse = Verse.get_verse(@house_type)
     verse.preface(@house_type) << num.downto(1).collect { |x| verse.get_phrase(x) }.join(' ')
   end
 
@@ -15,6 +15,15 @@ class House
 end
 
 class Verse
+
+  def self.get_verse(house_type)
+    case house_type
+    when :pirate
+      PirateVerse.new
+    else
+      Verse.new
+    end
+  end
 
   def initialize
     @phrases = {
