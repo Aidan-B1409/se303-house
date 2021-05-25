@@ -131,6 +131,7 @@ Thar be the horse and the hound and the horn that belonged to the farmer sowing 
   def test_random_full_song
     seed = 1049
     House.new.recite_random(seed)
+    print(House.new.recite_random(seed))
   end
 
   def test_random_pirate_song
