@@ -20,6 +20,7 @@ class House
 
   def recite_random(seed = Random.new_seed)
     rng = Random.new(seed)
+    _recite(@line_indices.shuffle!(random: rng))
   end
 
 end
