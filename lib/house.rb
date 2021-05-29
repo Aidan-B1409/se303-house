@@ -2,11 +2,11 @@
 class House
 
   def initialize()
-    @LineFactory = LineFactory.new()
+    @line_factory = LineFactory.build_factory
   end
 
   def line(num)
-    @LineFactory.get_line(num)
+    @line_factory.get_line(num)
   end
 
   def recite
@@ -17,12 +17,11 @@ end
 
 class LineFactory
 
-  def self.build_factory(house_type: default)
+  def self.build_factory(house_type = :default)
     house_type == :pirate ? PirateLineFactory.new : LineFactory.new
-
   end
 
-  def initialize()
+  def initialize
     @phrases = [
     "the house that Jack built.\n",
     'the malt that lay in',
