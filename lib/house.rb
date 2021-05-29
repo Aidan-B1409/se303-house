@@ -17,6 +17,14 @@ end
 
 class LineFactory
 
+  def self.registry
+    @registry ||= [LineFactory]
+  end
+
+  def self.register(line_factory)
+    register(line_factory)
+  end
+  
   def self.build_factory(house_type)
     house_type == :pirate ? PirateLineFactory.new : LineFactory.new
   end
