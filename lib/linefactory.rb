@@ -73,4 +73,9 @@ class RandomPirateLineFactory < RandomLineFactory
   def self.respond_to?(line_factory)
     line_factory == :random_pirate
   end
+
+  def initialize
+    super()
+    @prefix = 'Thar be'
+  end
 end
