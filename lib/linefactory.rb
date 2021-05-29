@@ -62,4 +62,9 @@ class RandomLineFactory < LineFactory
   def self.respond_to?(line_factory)
     line_factory == :random
   end
+
+  def get_line(num)
+    order = *(0..num-1).shuffle!
+    @prefix + order.collect { |x| ' ' << @phrases[x]}.join(' ').squeeze(' ')
+  end
 end
