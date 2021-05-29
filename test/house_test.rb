@@ -131,7 +131,7 @@ Thar be the horse and the hound and the horn that belonged to the farmer sowing 
 
   def test_random_seed_determinatcy
     seed = 1409
-    assert_equal House.new.recite_random(seed), House.new.recite_random(seed)
+    assert_equal House.new(:random, seed = seed).recite, House.new(:random, seed = seed).recite
   end
 
   def test_random_full_song

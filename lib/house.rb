@@ -2,8 +2,8 @@ require_relative 'linefactory'
 
 class House
 
-  def initialize(house_type = :default)
-    @line_factory = LineFactory.build_factory(house_type)
+  def initialize(house_type = :default, seed = Random.new_seed)
+    @line_factory = LineFactory.build_factory(house_type, seed)
     @line_indices = *(1..@line_factory.phrases.length)
   end
 

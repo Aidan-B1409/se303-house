@@ -68,3 +68,9 @@ class RandomLineFactory < LineFactory
     @prefix + order.collect { |x| ' ' << @phrases[x]}.join(' ').squeeze(' ')
   end
 end
+
+class RandomPirateLineFactory < RandomLineFactory
+  def self.respond_to?(line_factory)
+    line_factory == :random_pirate
+  end
+end
