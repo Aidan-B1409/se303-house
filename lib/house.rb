@@ -22,11 +22,15 @@ class LineFactory
   end
 
   def self.register(line_factory)
-    register(line_factory)
+    registry.prepend(line_factory)
   end
 
   def self.respond_to?(line_factory)
     true
+  end
+
+  def self.inherited(line_factory)
+    register(line_factory)
   end
 
   def self.build_factory(house_type)
