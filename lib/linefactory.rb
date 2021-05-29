@@ -22,6 +22,10 @@ class LineFactory
     registry.find { |verse| verse.respond_to?(house_type) }.new
   end
 
+  def get_seed(seed)
+    nil
+  end
+
   def initialize
     @phrases = [
     "the house that Jack built.\n",
@@ -61,6 +65,10 @@ end
 class RandomLineFactory < LineFactory
   def self.respond_to?(line_factory)
     line_factory == :random
+  end
+
+  def get_seed(seed)
+    seed.nil? ? Random.new_seed : seed
   end
 
   def get_line(num)
