@@ -60,9 +60,9 @@ end
 class PirateLineFactory < LineFactory
 
   def self.respond_to?(line_factory)
-    true
+    line_factory == :pirate
   end
-  
+
   def initialize
     super()
     @prefix = 'Thar be'
