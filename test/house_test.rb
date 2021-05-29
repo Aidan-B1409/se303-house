@@ -168,7 +168,6 @@ This is the rat that ate the malt that lay in the house that Jack built.
 
 
   def test_random_pirate_song
-    skip
     seed = 1409
     expected = <<-TEXT
 Thar be the malt that lay in the house that Jack built.
