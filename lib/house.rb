@@ -51,4 +51,7 @@ class Line
     @prefix = 'This is'
   end
 
+  def get_line(num)
+    @prefix << (num - 1).downto(0).collect { |x| ' ' << @phrases[x]}.join(' ').squeeze(' ')
+  end
 end
