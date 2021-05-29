@@ -95,7 +95,6 @@ This is the horse and the hound and the horn that belonged to the farmer sowing 
   end
 
   def test_pirate_line_1
-    skip
     expected = "Thar be the house that Jack built.\n"
     assert_equal expected, House.new(:pirate).line(1)
   end
