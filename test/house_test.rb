@@ -130,7 +130,6 @@ Thar be the horse and the hound and the horn that belonged to the farmer sowing 
   end
 
   def test_random_seed_determinatcy
-    skip
     seed = 1409
     assert_equal House.new.recite_random(seed), House.new.recite_random(seed)
   end
