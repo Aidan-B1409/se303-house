@@ -24,7 +24,11 @@ class LineFactory
   def self.register(line_factory)
     register(line_factory)
   end
-  
+
+  def self.respond_to?(line_factory)
+    true
+  end
+
   def self.build_factory(house_type)
     house_type == :pirate ? PirateLineFactory.new : LineFactory.new
   end
@@ -54,6 +58,11 @@ class LineFactory
 end
 
 class PirateLineFactory < LineFactory
+
+  def self.respond_to?(line_factory)
+    true
+  end
+  
   def initialize
     super()
     @prefix = 'Thar be'
