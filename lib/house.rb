@@ -15,7 +15,7 @@ class House
   end
 
   def recite_random(seed = Random.new_seed)
-
+    rng = Random.new(seed)
   end
 
 end
