@@ -11,7 +11,7 @@ class House
   end
 
   def recite
-    1.upto(12).collect { |x| line(x) }.join("\n")
+    @line_indices.collect { |x| line(x) }.join("\n")
   end
 
   def recite_random(seed)
