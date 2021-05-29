@@ -1,8 +1,8 @@
 
 class House
 
-  def initialize()
-    @line_factory = LineFactory.build_factory
+  def initialize(house_type = :default)
+    @line_factory = LineFactory.build_factory(house_type)
   end
 
   def line(num)
@@ -17,7 +17,7 @@ end
 
 class LineFactory
 
-  def self.build_factory(house_type = :default)
+  def self.build_factory(house_type)
     house_type == :pirate ? PirateLineFactory.new : LineFactory.new
   end
 
