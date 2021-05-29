@@ -18,7 +18,7 @@ end
 class LineFactory
 
   def self.build_factory(house_type: default)
-    return house_type == :pirate ? PirateLineFactory.new : LineFactory.new
+    house_type == :pirate ? PirateLineFactory.new : LineFactory.new
 
   end
 
