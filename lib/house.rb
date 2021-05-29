@@ -34,7 +34,7 @@ class LineFactory
   end
 
   def self.build_factory(house_type)
-    house_type == :pirate ? PirateLineFactory.new : LineFactory.new
+    registry.find { |verse| verse.respond_to?(house_type) }.new
   end
 
   def initialize
