@@ -17,7 +17,12 @@ end
 
 class LineFactory
 
-  def initialize
+  def self.build_factory(house_type: default)
+    return PirateLineFactory.new if house_type == :pirate else LineFactory.new
+
+  end
+
+  def initialize()
     @phrases = [
     "the house that Jack built.\n",
     'the malt that lay in',
