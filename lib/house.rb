@@ -40,3 +40,10 @@ class LineFactory
     @prefix + (num - 1).downto(0).collect { |x| ' ' << @phrases[x]}.join(' ').squeeze(' ')
   end
 end
+
+class PirateLineFactory < LineFactory
+  def initialize
+    super()
+    @prefix = 'Thar be'
+  end
+end
