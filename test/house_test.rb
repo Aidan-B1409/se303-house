@@ -135,7 +135,6 @@ Thar be the horse and the hound and the horn that belonged to the farmer sowing 
   end
 
   def test_random_full_song
-    skip
     seed = 1409
     expected = <<-TEXT
 This is the malt that lay in the house that Jack built.
