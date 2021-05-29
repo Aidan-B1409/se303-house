@@ -2,7 +2,7 @@
 class House
 
   def initialize()
-
+    @LineFactory = LineFactory.new()
   end
 
   def line(num)
@@ -22,6 +22,8 @@ class House
       'the horse and the hound and the horn that belonged to'
     ]
     prefix << (num - 1).downto(0).collect { |x| ' ' << phrases[x]}.join(' ').squeeze(' ')
+
+
   end
 
   def recite
@@ -30,7 +32,7 @@ class House
 
 end
 
-class Line
+class LineFactory
 
   def initialize
     @phrases = [
