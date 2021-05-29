@@ -45,7 +45,10 @@ class Line
     'the priest all shaven and shorn that married',
     'the rooster that crowed in the morn that woke',
     'the farmer sowing his corn that kept',
-    'the horse and the hound and the horn that belonged to']
+    'the horse and the hound and the horn that belonged to'
+    ]
+    
+    @prefix = 'This is'
   end
 
 end
