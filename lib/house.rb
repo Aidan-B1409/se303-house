@@ -13,6 +13,10 @@ class House
     1.upto(12).collect { |x| line(x) }.join("\n")
   end
 
+  def recite_random(seed)
+    
+  end
+
 end
 
 class LineFactory
