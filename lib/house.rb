@@ -14,7 +14,7 @@ class House
     @line_indices.collect { |x| line(x) }.join("\n")
   end
 
-  def recite_random(seed)
+  def recite_random(seed = Random.new_seed)
 
   end
 
