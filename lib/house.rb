@@ -19,7 +19,7 @@ class House
     range.collect { |x| line(x) }.join("\n")
   end
 
-  def recite_random(seed = Random.new_seed)
+  def recite_random_line_order(seed = Random.new_seed)
     rng = Random.new(seed)
     _recite(@line_indices.shuffle!(random: rng))
   end
