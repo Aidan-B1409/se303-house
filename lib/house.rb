@@ -3,6 +3,7 @@ class House
 
   def initialize(house_type = :default)
     @line_factory = LineFactory.build_factory(house_type)
+    @line_indices = *(1..@line_factory.phrases.length)
   end
 
   def line(num)
@@ -14,12 +15,13 @@ class House
   end
 
   def recite_random(seed)
-    
+
   end
 
 end
 
 class LineFactory
+  attr_reader :phrases
 
   def self.registry
     @registry ||= [LineFactory]
