@@ -18,15 +18,15 @@ class LineFactory
     register(line_factory)
   end
 
-  def self.build_factory(house_type)
-    registry.find { |verse| verse.respond_to?(house_type) }.new
+  def self.build_factory(house_type, seed)
+    registry.find { |verse| verse.respond_to?(house_type) }.new(seed)
   end
 
   def get_seed(seed)
     nil
   end
 
-  def initialize
+  def initialize(seed)
     @phrases = [
     "the house that Jack built.\n",
     'the malt that lay in',
@@ -42,6 +42,7 @@ class LineFactory
     'the horse and the hound and the horn that belonged to'
     ]
 
+    @line_gen = Line.build_line(seed)
     @prefix = 'This is'
   end
 
@@ -56,8 +57,8 @@ class PirateLineFactory < LineFactory
     line_factory == :pirate
   end
 
-  def initialize
-    super()
+  def initialize(seed)
+    super(seed)
     @prefix = 'Thar be'
   end
 end
