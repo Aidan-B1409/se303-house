@@ -66,8 +66,9 @@ class Phrases
   end
 
   def get_phrases
+    phrases = @subjects.zip(@verbs)
+    phrases = phrases.collect{ |x| x.join(" that ") }
     @phrases.prepend(@prefix)
-    @phrases
   end
 end
 
