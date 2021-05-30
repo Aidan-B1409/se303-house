@@ -64,8 +64,31 @@ end
 
 class Line
 
+  def self.registry
+    @registry ||= [Line]
+  end
+
+  def self.register(line_type)
+    registry.prepend(line_type)
+  end
+
+  def self.respond_to?(line_type)
+    true
+  end
+
+  def self.inherited(line_type)
+    register(line_type)
+  end
+
+  def self.build_line(line_type)
+    registry.find { |verse| verse.respond_to?(line_type) }.new
+  end
+
+  def initialize
+
+  end
 end
 
 class RandomLine
-  
+
 end
