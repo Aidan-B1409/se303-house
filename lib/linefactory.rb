@@ -91,4 +91,7 @@ end
 
 class RandomLine < Line
 
+  def self.respond_to?(line_type)
+    line_type == :random
+  end
 end
