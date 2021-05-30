@@ -13,7 +13,16 @@ class House
   end
 
   def recite
-    @line_indices.collect { |x| line(x) }.join("\n")
+    _recite(@line_indices)
+  end
+
+  def _recite(range)
+    range.collect { |x| line(x) }.join("\n")
+  end
+
+  def recite_random_line_order(seed = Random.new_seed)
+    rng = Random.new(seed)
+    _recite(@line_indices.shuffle!(random: rng))
   end
 
 end
