@@ -36,6 +36,32 @@ class Phrases
       'the farmer sowing his corn that kept',
       'the horse and the hound and the horn that belonged to'
       ]
+      @subjects = [
+        'the malt',
+        'the rat',
+        'the cat',
+        'the dog',
+        'the cow with the crumpled horn',
+        'the maiden all forlorn',
+        'the man all tattered and torn',
+        'the priest all shaven and shorn',
+        'the rooster that crowed in the morn',
+        'the farmer sowing his corn',
+        'the horse and the hound and the horn'
+      ]
+      @verbs = [
+        'lay in',
+        'ate',
+        'killed',
+        'worried',
+        'tossed',
+        'milked',
+        'kissed',
+        'married',
+        'woke',
+        'kept',
+        'belonged to'
+      ]
       @prefix = "the house that Jack built.\n"
   end
 
