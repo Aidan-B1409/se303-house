@@ -205,4 +205,10 @@ Thar be the cat that killed the rooster that crowed in the morn that woke the fa
     assert_equal expected, House.new(phrase_type: :random_subject_verb, seed: seed).line(1)
   end
 
+  def test_random_subverb_line_2
+    seed = 1409
+    expected = "This is the rat that kissed the house that Jack built.\n"
+    assert_equal expected, House.new(phrase_type: :random_subject_verb, seed: seed).line(2)
+  end
+
 end

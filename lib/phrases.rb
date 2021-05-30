@@ -72,7 +72,7 @@ class RandomPhrases < Phrases
   def initialize(seed)
     super(seed)
   end
-  
+
   def get_phrases
     phrases = assemble_phrases()
     phrases = phrases.shuffle(random: @rng)
@@ -80,7 +80,7 @@ class RandomPhrases < Phrases
   end
 end
 
-class RandomSubjectVerb < RandomPhrases
+class RandomSubjectVerb < Phrases
 
   def self.respond_to?(phrase_type)
     phrase_type == :random_subject_verb
