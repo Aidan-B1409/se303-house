@@ -18,15 +18,15 @@ class LineFactory
     register(line_factory)
   end
 
-  def self.build_factory(house_type, seed)
-    registry.find { |verse| verse.respond_to?(house_type) }.new(seed)
+  def self.build_factory(house_type, random_type, seed)
+    registry.find { |verse| verse.respond_to?(house_type) }.new(random_type, seed)
   end
 
   def get_seed(seed)
     nil
   end
 
-  def initialize(seed)
+  def initialize(random_type, seed)
     @phrases = [
     "the house that Jack built.\n",
     'the malt that lay in',
@@ -42,7 +42,7 @@ class LineFactory
     'the horse and the hound and the horn that belonged to'
     ]
 
-    @line_gen = Line.build_line(seed)
+    @line_gen = Line.build_line(random_type, seed)
     @prefix = 'This is'
   end
 
@@ -57,8 +57,8 @@ class PirateLineFactory < LineFactory
     line_factory == :pirate
   end
 
-  def initialize(seed)
-    super(seed)
+  def initialize(random_type, seed)
+    super(random_type, seed)
     @prefix = 'Thar be'
   end
 end
@@ -81,8 +81,12 @@ class Line
     register(line_type)
   end
 
-  def self.build_line(line_type)
-    registry.find { |verse| verse.respond_to?(line_type) }.new
+  def self.build_line(line_type, seed)
+    registry.find { |verse| verse.respond_to?(line_type) }.new(seed)
+  end
+
+  def initialize(seed)
+    @rng = seed.nil? ? Random.new : Random.new(seed)
   end
 
   def get_range(num)
@@ -94,5 +98,9 @@ class RandomLine < Line
 
   def self.respond_to?(line_type)
     line_type == :random
+  end
+
+  def get_range(num)
+    (num-1..0).to_a.shuffle!(@rng)
   end
 end
