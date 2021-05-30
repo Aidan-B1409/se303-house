@@ -130,11 +130,13 @@ Thar be the horse and the hound and the horn that belonged to the farmer sowing 
   end
 
   def test_random_seed_determinatcy
+    skip
     seed = 1409
     assert_equal House.new(:random, seed = seed).recite, House.new(:random, seed = seed).recite
   end
 
   def test_random_full_song
+    skip
     seed = 1409
     expected = <<-TEXT
 This is the malt that lay in the house that Jack built.
@@ -168,6 +170,7 @@ This is the rat that ate the malt that lay in the house that Jack built.
 
 
   def test_random_pirate_song
+    skip
     seed = 1409
     expected = <<-TEXT
 Thar be the malt that lay in the house that Jack built.

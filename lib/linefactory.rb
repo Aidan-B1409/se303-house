@@ -61,29 +61,3 @@ class PirateLineFactory < LineFactory
     @prefix = 'Thar be'
   end
 end
-
-class RandomLineFactory < LineFactory
-  def self.respond_to?(line_factory)
-    line_factory == :random
-  end
-
-  def get_seed(seed)
-    seed.nil? ? Random.new_seed : seed
-  end
-
-  def get_line(num)
-    order = *(0..num-1).shuffle!
-    @prefix + order.collect { |x| ' ' << @phrases[x]}.join(' ').squeeze(' ')
-  end
-end
-
-class RandomPirateLineFactory < RandomLineFactory
-  def self.respond_to?(line_factory)
-    line_factory == :random_pirate
-  end
-
-  def initialize
-    super()
-    @prefix = 'Thar be'
-  end
-end
