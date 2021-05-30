@@ -47,7 +47,7 @@ class LineFactory
   end
 
   def get_line(num)
-    @prefix + (num - 1).downto(0).collect { |x| ' ' << @phrases[x]}.join(' ').squeeze(' ')
+    @prefix + @line_gen.get_range(num).collect { |x| ' ' << @phrases[x]}.join(' ').squeeze(' ')
   end
 end
 
@@ -90,7 +90,7 @@ class Line
   end
 
   def get_range(num)
-    (num-1..0).to_a
+    return (num-1).downto(0)
   end
 end
 
