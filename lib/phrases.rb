@@ -62,4 +62,8 @@ class RandomSubjectVerb < RandomPhrases
   def self.respond_to?(phrase_type)
     phrase_type == :random_subject_verb
   end
+
+  def initialize(seed)
+    super(seed)
+  end
 end
