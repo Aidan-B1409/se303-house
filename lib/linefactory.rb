@@ -85,8 +85,8 @@ class Line
     registry.find { |verse| verse.respond_to?(line_type) }.new
   end
 
-  def initialize
-
+  def get_range(num)
+    (num-1..0).to_a
   end
 end
 
