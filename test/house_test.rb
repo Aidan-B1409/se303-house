@@ -96,7 +96,7 @@ This is the horse and the hound and the horn that belonged to the farmer sowing 
 
   def test_pirate_line_1
     expected = "Thar be the house that Jack built.\n"
-    assert_equal expected, House.new(:pirate).line(1)
+    assert_equal expected, House.new(house_type: :pirate).line(1)
   end
 
   def test_pirate_full_song
@@ -126,13 +126,13 @@ Thar be the farmer sowing his corn that kept the rooster that crowed in the morn
 
 Thar be the horse and the hound and the horn that belonged to the farmer sowing his corn that kept the rooster that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.
     TEXT
-    assert_equal expected, House.new(:pirate).recite
+    assert_equal expected, House.new(house_type: :pirate).recite
   end
 
   def test_random_seed_determinatcy
-    skip
     seed = 1409
-    assert_equal House.new(:random, seed = seed).recite, House.new(:random, seed = seed).recite
+    # puts House.new(random_type = :random, seed = seed).recite
+    assert_equal House.new(random_type: :random, seed: seed).recite, House.new(random_type: :random, seed: seed).recite
   end
 
   def test_random_full_song

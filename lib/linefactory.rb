@@ -82,7 +82,7 @@ class Line
   end
 
   def self.build_line(line_type, seed)
-    registry.find { |verse| verse.respond_to?(line_type) }.new(seed)
+    registry.find { |line| line.respond_to?(line_type) }.new(seed)
   end
 
   def initialize(seed)
@@ -101,6 +101,6 @@ class RandomLine < Line
   end
 
   def get_range(num)
-    (num-1).downto(0).shuffle!(@rng)
+    (num-1).downto(0).to_a.shuffle!(random: @rng)
   end
 end
