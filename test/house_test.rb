@@ -131,7 +131,6 @@ Thar be the horse and the hound and the horn that belonged to the farmer sowing 
 
   def test_random_seed_determinatcy
     seed = 1409
-    puts House.new(phrase_type: :random, seed: seed).recite
     assert_equal House.new(phrase_type: :random, seed: seed).recite, House.new(phrase_type: :random, seed: seed).recite
   end
 
@@ -197,6 +196,13 @@ Thar be the cat that killed the rooster that crowed in the morn that woke the fa
     TEXT
 
     assert_equal expected, House.new(house_type: :pirate, phrase_type: :random, seed: seed).recite
+  end
+
+
+  def test_random_subverb_line_1
+    seed = 1409
+    expected = "This is the house that Jack built.\n"
+    assert_equal expected, House.new(phrase_type: :random_subject_verb, seed: seed).line(1)
   end
 
 end
