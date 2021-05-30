@@ -211,4 +211,35 @@ Thar be the cat that killed the rooster that crowed in the morn that woke the fa
     assert_equal expected, House.new(phrase_type: :random_subject_verb, seed: seed).line(2)
   end
 
+  def test_random_subverb_all_lines
+    seed = 1409
+    puts House.new(phrase_type: :random_subject_verb, seed: seed).recite
+    expected = <<-TEXT
+This is the house that Jack built.
+
+This is the rat that kissed the house that Jack built.
+
+This is the horse and the hound and the horn that ate the rat that kissed the house that Jack built.
+
+This is the malt that worried the horse and the hound and the horn that ate the rat that kissed the house that Jack built.
+
+This is the maiden all forlorn that belonged to the malt that worried the horse and the hound and the horn that ate the rat that kissed the house that Jack built.
+
+This is the man all tattered and torn that woke the maiden all forlorn that belonged to the malt that worried the horse and the hound and the horn that ate the rat that kissed the house that Jack built.
+
+This is the dog that tossed the man all tattered and torn that woke the maiden all forlorn that belonged to the malt that worried the horse and the hound and the horn that ate the rat that kissed the house that Jack built.
+
+This is the priest all shaven and shorn that lay in the dog that tossed the man all tattered and torn that woke the maiden all forlorn that belonged to the malt that worried the horse and the hound and the horn that ate the rat that kissed the house that Jack built.
+
+This is the cow with the crumpled horn that kept the priest all shaven and shorn that lay in the dog that tossed the man all tattered and torn that woke the maiden all forlorn that belonged to the malt that worried the horse and the hound and the horn that ate the rat that kissed the house that Jack built.
+
+This is the farmer sowing his corn that killed the cow with the crumpled horn that kept the priest all shaven and shorn that lay in the dog that tossed the man all tattered and torn that woke the maiden all forlorn that belonged to the malt that worried the horse and the hound and the horn that ate the rat that kissed the house that Jack built.
+
+This is the rooster that crowed in the morn that married the farmer sowing his corn that killed the cow with the crumpled horn that kept the priest all shaven and shorn that lay in the dog that tossed the man all tattered and torn that woke the maiden all forlorn that belonged to the malt that worried the horse and the hound and the horn that ate the rat that kissed the house that Jack built.
+
+This is the cat that milked the rooster that crowed in the morn that married the farmer sowing his corn that killed the cow with the crumpled horn that kept the priest all shaven and shorn that lay in the dog that tossed the man all tattered and torn that woke the maiden all forlorn that belonged to the malt that worried the horse and the hound and the horn that ate the rat that kissed the house that Jack built.
+    TEXT
+    assert_equal expected, House.new(phrase_type: :random_subject_verb, seed: seed).recite
+  end
+
 end
