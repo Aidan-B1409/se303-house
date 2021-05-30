@@ -85,10 +85,11 @@ class Phrases
       'the farmer sowing his corn that kept',
       'the horse and the hound and the horn that belonged to'
       ]
-    @phrases.prepend("the house that Jack built.\n")
+      @prefix = "the house that Jack built.\n"
   end
 
   def get_phrases
+    @phrases.prepend(@prefix)
     @phrases
   end
 end
