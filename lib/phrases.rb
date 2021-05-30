@@ -62,12 +62,12 @@ class Phrases
         'kept',
         'belonged to'
       ]
+      @phrases = @subjects.zip(@verbs)
+      @phrases = @phrases.collect{ |x| x.join(" that ") }
       @prefix = "the house that Jack built.\n"
   end
 
   def get_phrases
-    phrases = @subjects.zip(@verbs)
-    phrases = phrases.collect{ |x| x.join(" that ") }
     @phrases.prepend(@prefix)
   end
 end
