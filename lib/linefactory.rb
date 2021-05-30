@@ -101,6 +101,6 @@ class RandomLine < Line
   end
 
   def get_range(num)
-    (num-1..0).to_a.shuffle!(@rng)
+    (num-1).downto(0).shuffle!(@rng)
   end
 end
