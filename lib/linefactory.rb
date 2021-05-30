@@ -89,6 +89,6 @@ class Line
   end
 end
 
-class RandomLine
+class RandomLine < Line
 
 end
