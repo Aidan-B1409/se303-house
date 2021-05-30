@@ -61,3 +61,11 @@ class PirateLineFactory < LineFactory
     @prefix = 'Thar be'
   end
 end
+
+class Line
+
+end
+
+class RandomLine
+  
+end
